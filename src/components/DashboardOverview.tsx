@@ -17,7 +17,7 @@ import {
 const liveStats = [
   { icon: Truck, label: "Truk Aktif", value: 523, suffix: "", color: "bg-blue-500", trend: "+12 hari ini" },
   { icon: School, label: "Sekolah Terjangkau", value: 1247, suffix: "+", color: "bg-cyan-500", trend: "+34 minggu ini" },
-  { icon: ChefHat, label: "Dapur Operasional", value: 518, suffix: "", color: "bg-emerald-500", trend: "98.2% aktif" },
+  { icon: ChefHat, label: "Dapur Operasional", value: 518, suffix: "", color: "bg-blue-500", trend: "98.2% aktif" },
   { icon: Users, label: "Penerima Manfaat", value: 2.4, suffix: "M", prefix: "", color: "bg-amber-500", trend: "+120rb bulan ini" },
 ];
 
@@ -68,7 +68,7 @@ export function DashboardOverview() {
                   <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${stat.color}/10`}>
                     <stat.icon className="h-4 w-4 text-blue-600" />
                   </div>
-                  <div className="flex items-center gap-1 text-[11px] font-medium text-emerald-600">
+                  <div className="flex items-center gap-1 text-[11px] font-medium text-blue-600">
                     <TrendingUp className="h-3 w-3" />
                     {stat.trend}
                   </div>
@@ -174,9 +174,9 @@ export function DashboardOverview() {
                 <h3 className="text-base font-semibold text-slate-900">Aktivitas Terkini</h3>
                 <p className="text-xs text-slate-500 mt-0.5">Update real-time</p>
               </div>
-              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-100">
-                <Zap className="h-3 w-3 text-emerald-600" />
-                <span className="text-[11px] font-medium text-emerald-600">Live</span>
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-100">
+                <Zap className="h-3 w-3 text-blue-600" />
+                <span className="text-[11px] font-medium text-blue-600">Live</span>
               </div>
             </div>
 
@@ -208,9 +208,9 @@ export function DashboardOverview() {
                   <p className="text-lg font-display text-blue-700">99.7%</p>
                   <p className="text-[11px] text-blue-500 mt-0.5">Uptime Sistem</p>
                 </div>
-                <div className="rounded-lg bg-emerald-50 p-3 text-center">
-                  <p className="text-lg font-display text-emerald-700">4.8/5</p>
-                  <p className="text-[11px] text-emerald-500 mt-0.5">Kepuasan</p>
+                <div className="rounded-lg bg-blue-50 p-3 text-center">
+                  <p className="text-lg font-display text-blue-700">4.8/5</p>
+                  <p className="text-[11px] text-blue-500 mt-0.5">Kepuasan</p>
                 </div>
               </div>
             </div>

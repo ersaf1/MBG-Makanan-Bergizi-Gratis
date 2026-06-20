@@ -66,7 +66,7 @@ const testimonials = [
     quote: "Dapur kami bangga bisa berkontribusi. Setiap hari kami memasak untuk 2000 anak dengan standar kebersihan tertinggi.",
     name: "Pak Budi Santoso",
     role: "Kepala Dapur MBG Yogyakarta",
-    avatar: "bg-emerald-100 text-emerald-600",
+    avatar: "bg-blue-100 text-blue-600",
   },
 ];
 
@@ -76,13 +76,13 @@ export default function DampakPage() {
       <Navbar />
       <main className="pt-16">
         {/* Hero */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-emerald-50 to-white overflow-hidden">
-          <div className="absolute top-20 right-20 w-96 h-96 bg-emerald-100/30 rounded-full blur-3xl" />
+        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
           <div className="relative mx-auto max-w-[1200px] px-6 lg:px-8">
             <AnimatedSection className="text-center mb-14">
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100 border border-emerald-200 mb-6">
-                <TrendingUp className="h-3.5 w-3.5 text-emerald-600" />
-                <span className="text-xs font-medium text-emerald-700 uppercase tracking-[1px]">Dampak Terukur</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
+                <TrendingUp className="h-3.5 w-3.5 text-blue-600" />
+                <span className="text-xs font-medium text-blue-700 uppercase tracking-[1px]">Dampak Terukur</span>
               </div>
               <h1 className="font-display text-[40px] sm:text-[52px] lg:text-[60px] font-normal tracking-[-1.5px] text-ink">
                 Angka yang <span className="text-gradient">Berbicara</span>
@@ -96,9 +96,9 @@ export default function DampakPage() {
             <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-4" staggerDelay={0.1}>
               {heroStats.map((stat) => (
                 <StaggerItem key={stat.label}>
-                  <div className="rounded-xl bg-white border border-slate-200 p-6 text-center hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 mx-auto mb-3">
-                      <stat.icon className="h-5 w-5 text-emerald-600" />
+                  <div className="rounded-xl bg-white border border-slate-200 p-6 text-center hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 mx-auto mb-3">
+                      <stat.icon className="h-5 w-5 text-blue-600" />
                     </div>
                     <div className="font-display text-[36px] font-normal tracking-[-0.5px] text-slate-900">
                       <CountUp end={stat.value} suffix={stat.suffix} duration={2} />
@@ -129,16 +129,16 @@ export default function DampakPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-white border border-slate-200 p-6 hover:border-emerald-200 transition-all duration-300"
+                  className="rounded-xl bg-white border border-slate-200 p-6 hover:border-blue-200 transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50">
-                        <m.icon className="h-4 w-4 text-emerald-600" />
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50">
+                        <m.icon className="h-4 w-4 text-blue-600" />
                       </div>
                       <span className="text-sm font-semibold text-slate-900">{m.label}</span>
                     </div>
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-xs font-semibold text-emerald-600">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 text-xs font-semibold text-blue-600">
                       <ArrowUpRight className="h-3 w-3" />
                       {m.improvement}
                     </span>
@@ -149,8 +149,8 @@ export default function DampakPage() {
                       <p className="text-2xl font-display text-slate-400 line-through">{m.before}</p>
                     </div>
                     <div>
-                      <p className="text-[11px] text-emerald-500 uppercase tracking-[1px] mb-1">Sesudah</p>
-                      <p className="text-2xl font-display font-semibold text-emerald-700">{m.after}</p>
+                      <p className="text-[11px] text-blue-500 uppercase tracking-[1px] mb-1">Sesudah</p>
+                      <p className="text-2xl font-display font-semibold text-blue-700">{m.after}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -193,7 +193,7 @@ export default function DampakPage() {
                     </div>
                     <span className="text-sm font-semibold text-blue-600 w-12">{item.after}{item.unit}</span>
                   </div>
-                  <span className="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">
                     +{item.after - item.before}{item.unit}
                   </span>
                 </motion.div>
@@ -237,7 +237,7 @@ export default function DampakPage() {
                     </div>
                   </div>
                   <span className={`inline-block px-2.5 py-1 rounded-full text-[11px] font-medium ${
-                    p.impact === "Sangat Tinggi" ? "bg-emerald-50 text-emerald-600" :
+                    p.impact === "Sangat Tinggi" ? "bg-blue-50 text-blue-600" :
                     p.impact === "Tinggi" ? "bg-blue-50 text-blue-600" :
                     p.impact === "Sedang" ? "bg-amber-50 text-amber-600" :
                     "bg-slate-100 text-slate-600"

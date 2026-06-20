@@ -14,7 +14,7 @@ const macroNutrients = [
   { icon: Beef, name: "Protein", amount: "25-30g", pct: 30, color: "bg-blue-500", desc: "Membangun otot & jaringan tubuh" },
   { icon: Wheat, name: "Karbohidrat", amount: "60-70g", pct: 45, color: "bg-cyan-500", desc: "Sumber energi utama otak & aktivitas" },
   { icon: Droplets, name: "Lemak Sehat", amount: "15-20g", pct: 20, color: "bg-amber-400", desc: "Penyerapan vitamin & perkembangan otak" },
-  { icon: Apple, name: "Serat", amount: "8-12g", pct: 15, color: "bg-emerald-500", desc: "Kesehatan pencernaan & metabolisme" },
+  { icon: Apple, name: "Serat", amount: "8-12g", pct: 15, color: "bg-blue-500", desc: "Kesehatan pencernaan & metabolisme" },
 ];
 
 const microNutrients = [
@@ -241,7 +241,7 @@ export default function NutrisiPage() {
                     <span className="text-2xl font-display font-semibold text-slate-900">{item.after}</span>
                   </div>
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${
-                    item.change.startsWith("+") ? "bg-emerald-50 text-emerald-600" : "bg-blue-50 text-blue-600"
+                    item.change.startsWith("+") ? "bg-blue-50 text-blue-600" : "bg-blue-50 text-blue-600"
                   }`}>
                     <TrendingUp className="h-3 w-3 inline mr-1" />
                     {item.change}

@@ -1,37 +1,27 @@
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { DashboardOverview } from "@/components/DashboardOverview";
-import { About } from "@/components/About";
-import { ProgramFlow } from "@/components/ProgramFlow";
-import { FoodMenu } from "@/components/FoodMenu";
-import { NutritionAnalytics } from "@/components/NutritionAnalytics";
-import { ImpactStats } from "@/components/ImpactStats";
-import { Gallery } from "@/components/Gallery";
-import { Education } from "@/components/Education";
-import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
-import { FinalCTA } from "@/components/FinalCTA";
-import { Footer } from "@/components/Footer";
+import { NavbarPremium } from "@/components/NavbarPremium";
+import { HeroPremium } from "@/components/HeroPremium";
+import { AboutPremium } from "@/components/AboutPremium";
+import { ProgramPremium } from "@/components/ProgramPremium";
+import { ProcessPremium } from "@/components/ProcessPremium";
+import { GalleryPremium } from "@/components/GalleryPremium";
+import { NewsPremium } from "@/components/NewsPremium";
+import { ImpactPremium } from "@/components/ImpactPremium";
+import { FooterPremium } from "@/components/FooterPremium";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <NavbarPremium />
       <main>
-        <Hero />
-        <DashboardOverview />
-        <About />
-        <ProgramFlow />
-        <FoodMenu />
-        <NutritionAnalytics />
-        <ImpactStats />
-        <Gallery />
-        <Education />
-        <Testimonials />
-        <FAQ />
-        <FinalCTA />
+        <HeroPremium />
+        <AboutPremium />
+        <ProgramPremium />
+        <ProcessPremium />
+        <GalleryPremium />
+        <NewsPremium />
+        <ImpactPremium />
       </main>
-      <Footer />
+      <FooterPremium />
     </>
   );
 }

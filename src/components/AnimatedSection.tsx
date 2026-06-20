@@ -12,24 +12,24 @@ interface AnimatedSectionProps {
 
 const directionVariants: Record<string, Variants> = {
   up: {
-    hidden: { opacity: 0, y: 40, filter: "blur(4px)" },
-    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
   },
   down: {
-    hidden: { opacity: 0, y: -40, filter: "blur(4px)" },
-    visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, y: -40 },
+    visible: { opacity: 1, y: 0 },
   },
   left: {
-    hidden: { opacity: 0, x: -40, filter: "blur(4px)" },
-    visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0 },
   },
   right: {
-    hidden: { opacity: 0, x: 40, filter: "blur(4px)" },
-    visible: { opacity: 1, x: 0, filter: "blur(0px)" },
+    hidden: { opacity: 0, x: 40 },
+    visible: { opacity: 1, x: 0 },
   },
   none: {
-    hidden: { opacity: 0, filter: "blur(4px)" },
-    visible: { opacity: 1, filter: "blur(0px)" },
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
   },
 };
 
@@ -102,3 +102,4 @@ export function StaggerItem({
     </motion.div>
   );
 }
+
