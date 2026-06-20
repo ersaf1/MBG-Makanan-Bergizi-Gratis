@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { Partners } from "@/components/Partners";
+import { DashboardOverview } from "@/components/DashboardOverview";
 import { About } from "@/components/About";
 import { ProgramFlow } from "@/components/ProgramFlow";
 import { FoodMenu } from "@/components/FoodMenu";
@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Partners />
+        <DashboardOverview />
         <About />
         <ProgramFlow />
         <FoodMenu />

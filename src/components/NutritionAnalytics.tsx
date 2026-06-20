@@ -16,10 +16,10 @@ const distributionData = [
 ];
 
 const nutritionData = [
-  { name: "Protein", value: 35, color: "#cc785c" },
-  { name: "Karbohidrat", value: 40, color: "#5db8a6" },
-  { name: "Lemak", value: 15, color: "#e8a55a" },
-  { name: "Vitamin", value: 10, color: "#a9583e" },
+  { name: "Protein", value: 35, color: "#3b82f6" },
+  { name: "Karbohidrat", value: 40, color: "#06b6d4" },
+  { name: "Lemak", value: 15, color: "#38bdf8" },
+  { name: "Vitamin", value: 10, color: "#2563eb" },
 ];
 
 const caloriesData = [
@@ -92,8 +92,8 @@ export function NutritionAnalytics() {
                   <Bar dataKey="value" fill="url(#barGrad)" radius={[4, 4, 0, 0]} />
                   <defs>
                     <linearGradient id="barGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#cc785c" />
-                      <stop offset="100%" stopColor="#e8a55a" />
+                      <stop offset="0%" stopColor="#3b82f6" />
+                      <stop offset="100%" stopColor="#06b6d4" />
                     </linearGradient>
                   </defs>
                 </BarChart>
@@ -139,11 +139,11 @@ export function NutritionAnalytics() {
                   <YAxis stroke="#a09d96" fontSize={11} tickLine={false} axisLine={false} />
                   <Tooltip contentStyle={{ background: "#181715", border: "1px solid #252320", borderRadius: "8px", color: "#faf9f5" }} />
                   <Area type="monotone" dataKey="target" stroke="#252320" fill="#1f1e1b" strokeDasharray="5 5" />
-                  <Area type="monotone" dataKey="actual" stroke="#cc785c" fill="url(#areaGrad)" strokeWidth={2} />
+                  <Area type="monotone" dataKey="actual" stroke="#3b82f6" fill="url(#areaGrad)" strokeWidth={2} />
                   <defs>
                     <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#cc785c" stopOpacity={0.2} />
-                      <stop offset="100%" stopColor="#cc785c" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.2} />
+                      <stop offset="100%" stopColor="#3b82f6" stopOpacity={0} />
                     </linearGradient>
                   </defs>
                 </AreaChart>

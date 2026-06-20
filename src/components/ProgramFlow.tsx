@@ -70,7 +70,7 @@ export function ProgramFlow() {
           className="mt-16 flex justify-center"
         >
           <div className="bg-surface-dark rounded-xl p-6 flex items-center gap-6 max-w-lg">
-            <MBGTruck size={72} color="#faf9f5" accentColor="#e8a55a" />
+            <MBGTruck size={72} color="#f8fafc" accentColor="#06b6d4" />
             <div>
               <p className="font-display text-on-dark text-lg tracking-[-0.3px]">Pengiriman Setiap Hari</p>
               <p className="text-sm text-on-dark-soft mt-1">500+ truk MBG berangkat dari dapur ke sekolah di seluruh Indonesia</p>

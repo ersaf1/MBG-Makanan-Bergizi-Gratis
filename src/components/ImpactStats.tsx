@@ -61,7 +61,7 @@ export function ImpactStats() {
               viewport={{ once: true }}
               transition={{ delay: 0.3 + i * 0.1 }}
             >
-              <MBGTruck size={48} color="#cc785c" accentColor="#e8a55a" />
+              <MBGTruck size={48} color="#3b82f6" accentColor="#06b6d4" />
             </motion.div>
           ))}
         </motion.div>

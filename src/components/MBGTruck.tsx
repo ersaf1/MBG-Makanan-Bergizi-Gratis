@@ -8,8 +8,8 @@ interface MBGTruckProps {
 export function MBGTruck({
   className = "",
   size = 120,
-  color = "#cc785c",
-  accentColor = "#e8a55a",
+  color = "#3b82f6",
+  accentColor = "#06b6d4",
 }: MBGTruckProps) {
   return (
     <svg
@@ -105,7 +105,7 @@ export function MBGTruckSide({
       className={className}
     >
       {/* Long cargo body */}
-      <rect x="4" y="10" width="120" height="48" rx="5" fill="#cc785c" />
+      <rect x="4" y="10" width="120" height="48" rx="5" fill="#3b82f6" />
       <rect x="8" y="14" width="112" height="40" rx="3" fill="white" opacity="0.12" />
 
       {/* Cargo content icons */}
@@ -114,7 +114,7 @@ export function MBGTruckSide({
       <text x="90" y="36" fontSize="16" fill="white" opacity="0.4">🥛</text>
 
       {/* MBG branding */}
-      <rect x="8" y="14" width="50" height="20" rx="3" fill="#a9583e" />
+      <rect x="8" y="14" width="50" height="20" rx="3" fill="#2563eb" />
       <text
         x="33"
         y="28"
@@ -128,15 +128,15 @@ export function MBGTruckSide({
       </text>
 
       {/* Orange stripe */}
-      <rect x="4" y="54" width="120" height="4" fill="#e8a55a" />
+      <rect x="4" y="54" width="120" height="4" fill="#06b6d4" />
 
       {/* Cabin */}
       <path
         d="M124 18 L124 58 L168 58 L168 32 L150 18 Z"
-        fill="#cc785c"
+        fill="#3b82f6"
       />
       <path d="M130 22 L130 44 L160 44 L152 22 Z" fill="#faf9f5" opacity="0.85" />
-      <rect x="124" y="54" width="44" height="4" fill="#e8a55a" />
+      <rect x="124" y="54" width="44" height="4" fill="#06b6d4" />
 
       {/* Bumper */}
       <rect x="164" y="42" width="24" height="16" rx="4" fill="#334155" />

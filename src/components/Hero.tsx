@@ -23,7 +23,7 @@ export function Hero() {
       {/* Driving truck */}
       <div className="absolute bottom-28 left-0 right-0 overflow-hidden pointer-events-none">
         <div className="animate-drive opacity-40">
-          <MBGTruck size={72} color="#cc785c" accentColor="#e8a55a" />
+          <MBGTruck size={72} color="#3b82f6" accentColor="#06b6d4" />
         </div>
       </div>
 
@@ -183,7 +183,7 @@ export function Hero() {
                 className="absolute -bottom-6 -left-8 bg-canvas rounded-xl p-4 shadow-card border border-hairline animate-float"
               >
                 <div className="flex items-center gap-3">
-                  <MBGTruck size={44} color="#cc785c" accentColor="#e8a55a" />
+                  <MBGTruck size={44} color="#3b82f6" accentColor="#06b6d4" />
                   <div>
                     <p className="text-sm font-semibold text-ink">
                       500+ Truk

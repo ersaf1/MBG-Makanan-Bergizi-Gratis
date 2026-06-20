@@ -61,7 +61,7 @@ export function Partners() {
           className="mt-12 rounded-xl bg-surface-dark p-6 flex items-center justify-between overflow-hidden relative"
         >
           <div className="flex items-center gap-4 z-10">
-            <MBGTruck size={56} color="#faf9f5" accentColor="#e8a55a" />
+            <MBGTruck size={56} color="#f8fafc" accentColor="#06b6d4" />
             <div>
               <p className="text-on-dark font-display text-lg tracking-[-0.3px]">Distribusi Nasional</p>
               <p className="text-on-dark-soft text-sm mt-0.5">Truk MBG menjangkau seluruh pelosok Indonesia setiap hari</p>
