@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <NavbarPremium />
-      <main>
+      <main id="main-content">
         <HeroPremium />
         <AboutPremium />
         <ProgramPremium />

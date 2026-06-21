@@ -66,17 +66,17 @@ export default function ProgramPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         {/* Hero */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
-          <div className="absolute top-20 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-cyan-100/30 rounded-full blur-3xl" />
+        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-surface-soft to-canvas overflow-hidden">
+          <div className="absolute top-20 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent-amber/10 rounded-full blur-3xl" />
           <div className="relative mx-auto max-w-[1200px] px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <AnimatedSection direction="left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-100 border border-blue-200 mb-6">
-                  <Target className="h-3.5 w-3.5 text-blue-600" />
-                  <span className="text-xs font-medium text-blue-700 uppercase tracking-[1px]">Program Nasional</span>
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                  <Target className="h-3.5 w-3.5 text-primary" />
+                  <span className="text-xs font-medium text-primary-active uppercase tracking-[1px]">Program Nasional</span>
                 </div>
                 <h1 className="font-display text-[40px] sm:text-[52px] lg:text-[60px] font-normal tracking-[-1.5px] text-ink leading-[1.05]">
                   Makan Bergizi <span className="text-gradient">Gratis</span>
@@ -86,32 +86,32 @@ export default function ProgramPage() {
                   bagi 80 juta anak sekolah di seluruh nusantara.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <CheckCircle2 className="h-4 w-4 text-blue-500" />
+                  <div className="flex items-center gap-2 text-sm text-body">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     80 Juta+ Target Penerima
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <CheckCircle2 className="h-4 w-4 text-blue-500" />
+                  <div className="flex items-center gap-2 text-sm text-body">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     34 Provinsi
                   </div>
-                  <div className="flex items-center gap-2 text-sm text-slate-600">
-                    <CheckCircle2 className="h-4 w-4 text-blue-500" />
+                  <div className="flex items-center gap-2 text-sm text-body">
+                    <CheckCircle2 className="h-4 w-4 text-primary" />
                     500+ Dapur
                   </div>
                 </div>
               </AnimatedSection>
               <AnimatedSection direction="right">
-                <div className="relative rounded-2xl bg-white border border-slate-200 p-8 shadow-lg shadow-blue-500/5">
+                <div className="relative rounded-2xl bg-white border border-hairline p-8 shadow-lg shadow-primary/5">
                   <div className="flex items-center gap-3 mb-6">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                       <Leaf className="h-5 w-5 text-white" />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-900">Visi Program</p>
-                      <p className="text-xs text-slate-500">Indonesia Emas 2045</p>
+                      <p className="font-semibold text-ink">Visi Program</p>
+                      <p className="text-xs text-muted">Indonesia Emas 2045</p>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                  <p className="text-sm text-body leading-relaxed mb-6">
                     Membangun generasi yang sehat, cerdas, dan produktif melalui
                     pemenuhan gizi yang merata bagi seluruh anak Indonesia.
                   </p>
@@ -121,9 +121,9 @@ export default function ProgramPage() {
                       { val: "500+", label: "Dapur" },
                       { val: "12K+", label: "Sekolah" },
                     ].map((s) => (
-                      <div key={s.label} className="rounded-lg bg-blue-50 p-3 text-center">
-                        <p className="text-lg font-display font-semibold text-blue-700">{s.val}</p>
-                        <p className="text-[11px] text-blue-500">{s.label}</p>
+                      <div key={s.label} className="rounded-lg bg-primary/5 p-3 text-center">
+                        <p className="text-lg font-display font-medium text-primary-active">{s.val}</p>
+                        <p className="text-[11px] text-primary">{s.label}</p>
                       </div>
                     ))}
                   </div>
@@ -137,7 +137,7 @@ export default function ProgramPage() {
         <section className="py-24 lg:py-28 bg-white">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
-              <p className="text-xs font-medium text-blue-600 uppercase tracking-[1.5px] mb-3">Alur Program</p>
+              <p className="text-xs font-medium text-primary uppercase tracking-[1.5px] mb-3">Alur Program</p>
               <h2 className="font-display text-[36px] sm:text-[48px] font-normal tracking-[-1px] text-ink">
                 5 Tahap Dapur ke Meja Makan
               </h2>
@@ -151,25 +151,25 @@ export default function ProgramPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`flex flex-col lg:flex-row items-start gap-6 lg:gap-10 p-6 lg:p-8 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/5 ${
-                    i % 2 === 0 ? "bg-white border-slate-200" : "bg-blue-50/50 border-blue-100"
+                  className={`flex flex-col lg:flex-row items-start gap-6 lg:gap-10 p-6 lg:p-8 rounded-2xl border transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 ${
+                    i % 2 === 0 ? "bg-white border-hairline" : "bg-primary/5 border-primary/10"
                   }`}
                 >
                   <div className="flex items-center gap-4 lg:w-80 shrink-0">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-500 text-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-white">
                       <phase.icon className="h-6 w-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-medium text-blue-400 uppercase tracking-[1px]">Fase {phase.step}</span>
-                      <h3 className="text-lg font-semibold text-slate-900">{phase.title}</h3>
+                      <span className="text-xs font-medium text-primary/60 uppercase tracking-[1px]">Fase {phase.step}</span>
+                      <h3 className="text-lg font-semibold text-ink">{phase.title}</h3>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm text-slate-600 leading-relaxed mb-4">{phase.desc}</p>
+                    <p className="text-sm text-body leading-relaxed mb-4">{phase.desc}</p>
                     <div className="flex flex-wrap gap-2">
                       {phase.details.map((d) => (
-                        <span key={d} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white border border-slate-200 text-xs text-slate-600">
-                          <CheckCircle2 className="h-3 w-3 text-blue-500" />
+                        <span key={d} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white border border-hairline text-xs text-body">
+                          <CheckCircle2 className="h-3 w-3 text-primary" />
                           {d}
                         </span>
                       ))}
@@ -182,24 +182,24 @@ export default function ProgramPage() {
         </section>
 
         {/* Eligibility */}
-        <section className="py-24 lg:py-28 bg-slate-50">
+        <section className="py-24 lg:py-28 bg-surface-soft">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-start">
               <AnimatedSection direction="left">
-                <p className="text-xs font-medium text-blue-600 uppercase tracking-[1.5px] mb-3">Penerima Manfaat</p>
+                <p className="text-xs font-medium text-primary uppercase tracking-[1.5px] mb-3">Penerima Manfaat</p>
                 <h2 className="font-display text-[36px] sm:text-[44px] font-normal tracking-[-1px] text-ink leading-tight">
                   Siapa yang Mendapat Manfaat?
                 </h2>
-                <p className="mt-4 text-base text-slate-600 leading-relaxed">
+                <p className="mt-4 text-base text-body leading-relaxed">
                   Program MBG ditujukan untuk seluruh anak Indonesia tanpa terkecuali.
                   Setiap anak berhak mendapatkan makanan bergizi untuk tumbuh kembang optimal.
                 </p>
                 <div className="mt-8 space-y-3">
-                  <p className="text-sm font-semibold text-slate-900">Persyaratan Sekolah:</p>
+                  <p className="text-sm font-semibold text-ink">Persyaratan Sekolah:</p>
                   {requirements.map((req) => (
                     <div key={req} className="flex items-start gap-3">
-                      <FileCheck className="h-4 w-4 text-blue-500 mt-0.5 shrink-0" />
-                      <span className="text-sm text-slate-600">{req}</span>
+                      <FileCheck className="h-4 w-4 text-primary mt-0.5 shrink-0" />
+                      <span className="text-sm text-body">{req}</span>
                     </div>
                   ))}
                 </div>
@@ -208,12 +208,12 @@ export default function ProgramPage() {
               <StaggerContainer className="grid sm:grid-cols-2 gap-4" staggerDelay={0.1}>
                 {eligibility.map((item) => (
                   <StaggerItem key={item.title}>
-                    <div className="rounded-xl bg-white border border-slate-200 p-6 hover:border-blue-200 hover:shadow-md transition-all duration-300">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-50 mb-4">
-                        <item.icon className="h-5 w-5 text-blue-600" />
+                    <div className="rounded-xl bg-white border border-hairline p-6 hover:border-primary/30 hover:shadow-md transition-all duration-300">
+                      <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/5 mb-4">
+                        <item.icon className="h-5 w-5 text-primary" />
                       </div>
-                      <h3 className="text-base font-semibold text-slate-900 mb-2">{item.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.desc}</p>
+                      <h3 className="text-base font-semibold text-ink mb-2">{item.title}</h3>
+                      <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
                     </div>
                   </StaggerItem>
                 ))}
@@ -223,17 +223,17 @@ export default function ProgramPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+        <section className="py-20 bg-gradient-to-r from-primary to-primary-active">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8 text-center">
             <AnimatedSection>
               <h2 className="font-display text-[32px] sm:text-[40px] font-normal tracking-[-0.5px] text-white">
                 Ingin Sekolah Anda Terdaftar?
               </h2>
-              <p className="mt-3 text-blue-100 max-w-lg mx-auto">
+              <p className="mt-3 text-primary/10 max-w-lg mx-auto">
                 Hubungi dinas pendidikan setempat atau daftarkan sekolah Anda melalui portal resmi MBG.
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <span className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-blue-700 font-medium text-sm hover:bg-blue-50 transition-colors cursor-pointer">
+                <span className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-primary-active font-medium text-sm hover:bg-primary/5 transition-colors cursor-pointer">
                   Daftar Sekolah <ArrowRight className="h-4 w-4" />
                 </span>
                 <span className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/30 text-white font-medium text-sm hover:bg-white/10 transition-colors cursor-pointer">

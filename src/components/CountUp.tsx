@@ -47,7 +47,7 @@ export function CountUp({
   }, [isInView, end, duration]);
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={className} style={{ fontVariantNumeric: "tabular-nums" }}>
       {prefix}
       {count.toLocaleString()}
       {suffix}

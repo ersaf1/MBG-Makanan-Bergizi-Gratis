@@ -12,44 +12,63 @@ const images = [
   { src: "/images/kitchen-interior.png", label: "Dapur Interior", span: "col-span-2 row-span-1" },
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 32, filter: "blur(6px)" },
+  visible: (delay: number) => ({
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] as const },
+  }),
+};
+
 export function GalleryPremium() {
   return (
     <section id="galeri" className="section-premium bg-surface-soft">
       <div className="mx-auto max-w-[1280px] px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          custom={0}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={fadeUp}
           className="text-center mb-14"
         >
-          <p className="text-xs font-semibold text-blue-600 uppercase tracking-[2px] mb-3">
-            Galeri
-          </p>
-          <h2 className="font-display text-[36px] sm:text-[44px] lg:text-[52px] font-bold tracking-[-1.5px] text-ink">
+          <span className="eyebrow mb-4">Galeri</span>
+          <h2 className="mt-5 font-display text-[clamp(2.2rem,5vw,3.5rem)] font-normal tracking-[-0.03em] text-ink">
             Momen Bermakna
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[200px] lg:auto-rows-[240px]">
+        {/* Asymmetric Bento Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 auto-rows-[180px] lg:auto-rows-[220px]">
           {images.map((img, i) => (
             <motion.div
               key={img.label}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer ${img.span}`}
+              custom={0.05 + i * 0.06}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-40px" }}
+              variants={fadeUp}
+              className={`group ${img.span}`}
             >
-              <Image
-                src={img.src}
-                alt={img.label}
-                fill
-                className="object-cover img-zoom"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <p className="text-white font-semibold text-sm">{img.label}</p>
+              {/* Double-Bezel Frame */}
+              <div className="bezel h-full">
+                <div className="bezel-inner relative h-full cursor-pointer overflow-hidden">
+                  <Image
+                    src={img.src}
+                    alt={img.label}
+                    fill
+                    className="object-cover img-zoom"
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <p className="text-white font-semibold text-sm tracking-[-0.01em]">
+                      {img.label}
+                    </p>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
@@ -58,4 +77,3 @@ export function GalleryPremium() {
     </section>
   );
 }
-

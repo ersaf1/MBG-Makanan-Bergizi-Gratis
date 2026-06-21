@@ -69,15 +69,15 @@ export default function GaleriPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         {/* Hero */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-violet-50 to-white overflow-hidden">
-          <div className="absolute top-10 right-10 w-80 h-80 bg-violet-100/40 rounded-full blur-3xl" />
+        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-surface-soft to-canvas overflow-hidden">
+          <div className="absolute top-10 right-10 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
           <div className="relative mx-auto max-w-[1200px] px-6 lg:px-8 text-center">
             <AnimatedSection>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-100 border border-violet-200 mb-6">
-                <Camera className="h-3.5 w-3.5 text-violet-600" />
-                <span className="text-xs font-medium text-violet-700 uppercase tracking-[1px]">Dokumentasi</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
+                <Camera className="h-3.5 w-3.5 text-primary" />
+                <span className="text-xs font-medium text-primary uppercase tracking-[1px]">Dokumentasi</span>
               </div>
               <h1 className="font-display text-[40px] sm:text-[52px] lg:text-[60px] font-normal tracking-[-1.5px] text-ink">
                 Momen <span className="text-gradient">Bermakna</span>
@@ -96,13 +96,13 @@ export default function GaleriPage() {
             <AnimatedSection className="mb-10">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-medium text-blue-600 uppercase tracking-[1.5px] mb-2">Pilihan Editor</p>
+                  <p className="text-xs font-medium text-primary uppercase tracking-[1.5px] mb-2">Pilihan Editor</p>
                   <h2 className="font-display text-[28px] sm:text-[36px] font-normal tracking-[-0.5px] text-ink">
                     Foto Unggulan
                   </h2>
                 </div>
-                <div className="flex items-center gap-1 text-sm text-slate-500">
-                  <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                <div className="flex items-center gap-1 text-sm text-muted">
+                  <Star className="h-4 w-4 text-accent-amber fill-accent-amber" />
                   <span>{featuredItems.length} foto</span>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export default function GaleriPage() {
                     </div>
                   </div>
                   {item.featured && (
-                    <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-amber-400 text-[10px] font-bold text-white uppercase tracking-[1px]">
+                    <span className="absolute top-3 left-3 px-2 py-1 rounded-md bg-accent-amber text-[10px] font-bold text-white uppercase tracking-[1px]">
                       Unggulan
                     </span>
                   )}
@@ -144,17 +144,17 @@ export default function GaleriPage() {
         </section>
 
         {/* Category Filter + Gallery */}
-        <section className="py-16 bg-slate-50">
+        <section className="py-16 bg-surface-soft">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
             <AnimatedSection className="mb-8">
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
-                  <p className="text-xs font-medium text-blue-600 uppercase tracking-[1.5px] mb-2">Galeri Lengkap</p>
+                  <p className="text-xs font-medium text-primary uppercase tracking-[1.5px] mb-2">Galeri Lengkap</p>
                   <h2 className="font-display text-[28px] sm:text-[36px] font-normal tracking-[-0.5px] text-ink">
                     Browse by Category
                   </h2>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-slate-500">
+                <div className="flex items-center gap-2 text-sm text-muted">
                   <Camera className="h-4 w-4" />
                   <span>{filteredItems.length} foto</span>
                 </div>
@@ -169,8 +169,8 @@ export default function GaleriPage() {
                   onClick={() => setActiveCategory(cat.id)}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     activeCategory === cat.id
-                      ? "bg-blue-500 text-white shadow-md shadow-blue-500/20"
-                      : "bg-white border border-slate-200 text-slate-600 hover:border-blue-200"
+                      ? "bg-primary text-white shadow-md shadow-primary/20"
+                      : "bg-white border border-hairline text-body hover:border-primary/30"
                   }`}
                 >
                   <cat.icon className="h-3.5 w-3.5" />
@@ -190,20 +190,20 @@ export default function GaleriPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
                     transition={{ duration: 0.3, delay: i * 0.05 }}
-                    className="group relative rounded-xl overflow-hidden cursor-pointer bg-white border border-slate-200 hover:border-blue-200 hover:shadow-lg transition-all duration-300"
+                    className="group relative rounded-xl overflow-hidden cursor-pointer bg-white border border-hairline hover:border-primary/30 hover:shadow-lg transition-all duration-300"
                     onClick={() => setSelectedImage(item.id)}
                   >
                     <div className="aspect-[4/3] bg-gradient-to-br from-slate-100 to-blue-50 flex items-center justify-center">
                       <item.Illustration size={80} className="group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="p-4">
-                      <h3 className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">{item.title}</h3>
-                      <p className="text-xs text-slate-500 mt-1 line-clamp-1">{item.desc}</p>
+                      <h3 className="text-sm font-semibold text-ink group-hover:text-primary transition-colors">{item.title}</h3>
+                      <p className="text-xs text-muted mt-1 line-clamp-1">{item.desc}</p>
                       <div className="flex items-center gap-3 mt-3">
-                        <span className="flex items-center gap-1 text-[11px] text-slate-400">
+                        <span className="flex items-center gap-1 text-[11px] text-muted-soft">
                           <MapPin className="h-3 w-3" /> {item.loc}
                         </span>
-                        <span className="flex items-center gap-1 text-[11px] text-slate-400">
+                        <span className="flex items-center gap-1 text-[11px] text-muted-soft">
                           <Calendar className="h-3 w-3" /> {item.date}
                         </span>
                       </div>
@@ -224,7 +224,7 @@ export default function GaleriPage() {
         <section className="py-16 bg-white">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
             <AnimatedSection className="mb-10">
-              <p className="text-xs font-medium text-blue-600 uppercase tracking-[1.5px] mb-2">Video</p>
+              <p className="text-xs font-medium text-primary uppercase tracking-[1.5px] mb-2">Video</p>
               <h2 className="font-display text-[28px] sm:text-[36px] font-normal tracking-[-0.5px] text-ink">
                 Highlight Video
               </h2>
@@ -238,9 +238,9 @@ export default function GaleriPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="group relative rounded-xl overflow-hidden bg-slate-900 cursor-pointer"
+                  className="group relative rounded-xl overflow-hidden bg-surface-dark cursor-pointer"
                 >
-                  <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-blue-900 to-slate-900">
+                  <div className="aspect-video flex items-center justify-center bg-gradient-to-br from-surface-dark to-surface-dark-elevated">
                     <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm group-hover:bg-white/30 group-hover:scale-110 transition-all duration-300">
                       <Play className="h-6 w-6 text-white ml-1" />
                     </div>
@@ -259,17 +259,17 @@ export default function GaleriPage() {
         </section>
 
         {/* Upload CTA */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700">
+        <section className="py-16 bg-gradient-to-r from-primary to-primary-active">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8 text-center">
             <AnimatedSection>
-              <Camera className="h-10 w-10 text-blue-200 mx-auto mb-4" />
+              <Camera className="h-10 w-10 text-on-dark-soft mx-auto mb-4" />
               <h2 className="font-display text-[28px] sm:text-[36px] font-normal tracking-[-0.5px] text-white">
                 Punya Foto MBG?
               </h2>
-              <p className="mt-3 text-blue-100 max-w-lg mx-auto">
+              <p className="mt-3 text-primary/10 max-w-lg mx-auto">
                 Kirim foto momen MBG di sekolah atau dapur Anda untuk ditampilkan di galeri ini.
               </p>
-              <span className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg bg-white text-blue-700 font-medium text-sm hover:bg-blue-50 transition-colors cursor-pointer">
+              <span className="inline-flex items-center gap-2 mt-6 px-6 py-3 rounded-lg bg-white text-primary-active font-medium text-sm hover:bg-primary/5 transition-colors cursor-pointer">
                 <Camera className="h-4 w-4" /> Kirim Foto
               </span>
             </AnimatedSection>

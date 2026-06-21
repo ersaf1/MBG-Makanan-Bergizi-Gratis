@@ -3,9 +3,22 @@
 import { Truck } from "lucide-react";
 
 const footerLinks = {
-  Program: ["Tentang MBG", "Alur Program", "Menu Makanan", "Dampak"],
-  Informasi: ["Edukasi Gizi", "FAQ", "Berita", "Kontak"],
-  Legal: ["Kebijakan Privasi", "Syarat & Ketentuan"],
+  Program: [
+    { label: "Tentang MBG", href: "#tentang" },
+    { label: "Alur Program", href: "#proses" },
+    { label: "Menu Makanan", href: "/nutrisi" },
+    { label: "Dampak", href: "/dampak" },
+  ],
+  Informasi: [
+    { label: "Edukasi Gizi", href: "/nutrisi" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Berita", href: "#berita" },
+    { label: "Kontak", href: "/faq" },
+  ],
+  Legal: [
+    { label: "Kebijakan Privasi", href: "#" },
+    { label: "Syarat & Ketentuan", href: "#" },
+  ],
 };
 
 export function Footer() {
@@ -38,9 +51,9 @@ export function Footer() {
               </h3>
               <ul className="space-y-3">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-sm text-on-dark-soft hover:text-on-dark transition-colors duration-200">
-                      {link}
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-on-dark-soft hover:text-on-dark transition-colors duration-200">
+                      {link.label}
                     </a>
                   </li>
                 ))}
@@ -55,9 +68,9 @@ export function Footer() {
           </p>
           <div className="flex items-center gap-4">
             {["Twitter", "Instagram", "YouTube"].map((social) => (
-              <a key={social} href="#" className="text-xs text-on-dark-soft hover:text-on-dark transition-colors duration-200">
+              <span key={social} className="text-xs text-on-dark-soft/50 cursor-not-allowed" title="Segera hadir">
                 {social}
-              </a>
+              </span>
             ))}
           </div>
         </div>

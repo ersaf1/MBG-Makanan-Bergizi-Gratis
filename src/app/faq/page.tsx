@@ -60,14 +60,14 @@ const supportChannels = [
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <motion.div className="border border-slate-200 rounded-xl overflow-hidden" layout>
+    <motion.div className="border border-hairline rounded-xl overflow-hidden" layout>
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center justify-between w-full px-6 py-5 text-left hover:bg-slate-50 transition-colors"
+        className="flex items-center justify-between w-full px-6 py-5 text-left hover:bg-surface-soft transition-colors"
       >
-        <span className="text-sm font-semibold text-slate-900 pr-4">{question}</span>
+        <span className="text-sm font-semibold text-ink pr-4">{question}</span>
         <motion.div animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }} className="shrink-0">
-          <ChevronDown className="h-4 w-4 text-slate-400" />
+          <ChevronDown className="h-4 w-4 text-muted-soft" />
         </motion.div>
       </button>
       <AnimatePresence initial={false}>
@@ -79,7 +79,7 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">{answer}</div>
+            <div className="px-6 pb-5 text-sm text-body leading-relaxed border-t border-primary/10 pt-4">{answer}</div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -101,15 +101,15 @@ export default function FAQPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         {/* Hero */}
-        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-amber-50 to-white overflow-hidden">
-          <div className="absolute top-10 left-10 w-80 h-80 bg-amber-100/30 rounded-full blur-3xl" />
+        <section className="relative py-24 lg:py-32 bg-gradient-to-b from-surface-soft to-canvas overflow-hidden">
+          <div className="absolute top-10 left-10 w-80 h-80 bg-accent-amber/10 rounded-full blur-3xl" />
           <div className="relative mx-auto max-w-[1200px] px-6 lg:px-8 text-center">
             <AnimatedSection>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 border border-amber-200 mb-6">
-                <HelpCircle className="h-3.5 w-3.5 text-amber-600" />
-                <span className="text-xs font-medium text-amber-700 uppercase tracking-[1px]">Bantuan</span>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-amber/10 border border-accent-amber/20 mb-6">
+                <HelpCircle className="h-3.5 w-3.5 text-accent-amber" />
+                <span className="text-xs font-medium text-accent-amber uppercase tracking-[1px]">Bantuan</span>
               </div>
               <h1 className="font-display text-[40px] sm:text-[52px] lg:text-[60px] font-normal tracking-[-1.5px] text-ink">
                 Pertanyaan <span className="text-gradient">Umum</span>
@@ -123,13 +123,13 @@ export default function FAQPage() {
             {/* Search */}
             <AnimatedSection delay={0.2}>
               <div className="mt-10 max-w-xl mx-auto relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-soft" />
                 <input
                   type="text"
                   placeholder="Cari pertanyaan..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-white border border-slate-200 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-white border border-hairline text-sm text-ink placeholder:text-muted-soft focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/10 transition-all"
                 />
               </div>
             </AnimatedSection>
@@ -143,7 +143,7 @@ export default function FAQPage() {
               {/* Category sidebar */}
               <AnimatedSection direction="left">
                 <div className="lg:sticky lg:top-24">
-                  <p className="text-xs font-medium text-slate-500 uppercase tracking-[1.5px] mb-4">Kategori</p>
+                  <p className="text-xs font-medium text-muted uppercase tracking-[1.5px] mb-4">Kategori</p>
                   <div className="flex lg:flex-col gap-2 overflow-x-auto pb-2 lg:pb-0">
                     {faqCategories.map((cat) => (
                       <button
@@ -151,14 +151,14 @@ export default function FAQPage() {
                         onClick={() => { setActiveCategory(cat.id); setSearchQuery(""); }}
                         className={`flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                           activeCategory === cat.id && !searchQuery
-                            ? "bg-blue-50 text-blue-700 border border-blue-200"
-                            : "text-slate-600 hover:bg-slate-50 border border-transparent"
+                            ? "bg-primary/5 text-primary-active border border-primary/20"
+                            : "text-body hover:bg-surface-soft border border-transparent"
                         }`}
                       >
                         <cat.icon className="h-4 w-4 shrink-0" />
                         <span>{cat.label}</span>
                         <span className={`ml-auto text-[11px] px-1.5 py-0.5 rounded-full ${
-                          activeCategory === cat.id && !searchQuery ? "bg-blue-100 text-blue-600" : "bg-slate-100 text-slate-500"
+                          activeCategory === cat.id && !searchQuery ? "bg-primary/10 text-primary" : "bg-surface-card text-muted"
                         }`}>
                           {cat.count}
                         </span>
@@ -167,19 +167,19 @@ export default function FAQPage() {
                   </div>
 
                   {/* Quick stats */}
-                  <div className="hidden lg:block mt-8 p-5 rounded-xl bg-blue-50 border border-blue-100">
+                  <div className="hidden lg:block mt-8 p-5 rounded-xl bg-primary/5 border border-primary/10">
                     <div className="flex items-center gap-2 mb-3">
-                      <BookOpen className="h-4 w-4 text-blue-600" />
-                      <span className="text-sm font-semibold text-blue-900">Basis Pengetahuan</span>
+                      <BookOpen className="h-4 w-4 text-primary" />
+                      <span className="text-sm font-semibold text-ink">Basis Pengetahuan</span>
                     </div>
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-blue-700">Total Pertanyaan</span>
-                        <span className="font-semibold text-blue-900">19</span>
+                        <span className="text-primary-active">Total Pertanyaan</span>
+                        <span className="font-semibold text-ink">19</span>
                       </div>
                       <div className="flex items-center justify-between text-xs">
-                        <span className="text-blue-700">Terakhir Diperbarui</span>
-                        <span className="font-semibold text-blue-900">Jan 2026</span>
+                        <span className="text-primary-active">Terakhir Diperbarui</span>
+                        <span className="font-semibold text-ink">Jan 2026</span>
                       </div>
                     </div>
                   </div>
@@ -191,10 +191,10 @@ export default function FAQPage() {
                 <AnimatedSection className="mb-6">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-lg font-semibold text-slate-900">
+                      <h2 className="text-lg font-semibold text-ink">
                         {searchQuery ? `Hasil pencarian: "${searchQuery}"` : faqCategories.find((c) => c.id === activeCategory)?.label}
                       </h2>
-                      <p className="text-xs text-slate-500 mt-0.5">{filteredFaqs.length} pertanyaan</p>
+                      <p className="text-xs text-muted mt-0.5">{filteredFaqs.length} pertanyaan</p>
                     </div>
                   </div>
                 </AnimatedSection>
@@ -209,11 +209,11 @@ export default function FAQPage() {
 
                 {filteredFaqs.length === 0 && (
                   <div className="text-center py-16">
-                    <Search className="h-10 w-10 text-slate-300 mx-auto mb-4" />
-                    <p className="text-sm text-slate-500">Tidak ada pertanyaan yang cocok dengan pencarian Anda.</p>
+                    <Search className="h-10 w-10 text-muted-soft mx-auto mb-4" />
+                    <p className="text-sm text-muted">Tidak ada pertanyaan yang cocok dengan pencarian Anda.</p>
                     <button
                       onClick={() => setSearchQuery("")}
-                      className="mt-3 text-sm text-blue-600 font-medium hover:underline"
+                      className="mt-3 text-sm text-primary font-medium hover:underline"
                     >
                       Reset pencarian
                     </button>
@@ -225,14 +225,14 @@ export default function FAQPage() {
         </section>
 
         {/* Support Channels */}
-        <section className="py-16 bg-slate-50">
+        <section className="py-16 bg-surface-soft">
           <div className="mx-auto max-w-[1200px] px-6 lg:px-8">
             <AnimatedSection className="text-center mb-10">
-              <p className="text-xs font-medium text-blue-600 uppercase tracking-[1.5px] mb-3">Butuh Bantuan?</p>
+              <p className="text-xs font-medium text-primary uppercase tracking-[1.5px] mb-3">Butuh Bantuan?</p>
               <h2 className="font-display text-[32px] sm:text-[40px] font-normal tracking-[-0.5px] text-ink">
                 Hubungi Tim Kami
               </h2>
-              <p className="mt-3 text-base text-slate-500 max-w-lg mx-auto">
+              <p className="mt-3 text-base text-muted max-w-lg mx-auto">
                 Tidak menemukan jawaban? Tim support MBG siap membantu Anda.
               </p>
             </AnimatedSection>
@@ -245,14 +245,14 @@ export default function FAQPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="rounded-xl bg-white border border-slate-200 p-6 text-center hover:border-blue-200 hover:shadow-md transition-all duration-300"
+                  className="rounded-xl bg-white border border-hairline p-6 text-center hover:border-primary/30 hover:shadow-md transition-all duration-300"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-50 mx-auto mb-4">
-                    <ch.icon className="h-6 w-6 text-blue-600" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 mx-auto mb-4">
+                    <ch.icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-base font-semibold text-slate-900 mb-1">{ch.title}</h3>
-                  <p className="text-sm text-slate-500 mb-4">{ch.desc}</p>
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-700 cursor-pointer">
+                  <h3 className="text-base font-semibold text-ink mb-1">{ch.title}</h3>
+                  <p className="text-sm text-muted mb-4">{ch.desc}</p>
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary-active cursor-pointer">
                     {ch.action} <ChevronDown className="h-3.5 w-3.5 rotate-[-90deg]" />
                   </span>
                 </motion.div>
@@ -282,14 +282,14 @@ export default function FAQPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-4 p-5 rounded-xl border border-slate-200 hover:border-blue-200 hover:bg-blue-50/30 transition-all duration-300 cursor-pointer"
+                  className="flex items-center gap-4 p-5 rounded-xl border border-hairline hover:border-primary/30 hover:bg-primary/5 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-50">
-                    <r.icon className="h-5 w-5 text-blue-600" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/5">
+                    <r.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-slate-900">{r.title}</h3>
-                    <p className="text-xs text-slate-500">{r.desc}</p>
+                    <h3 className="text-sm font-semibold text-ink">{r.title}</h3>
+                    <p className="text-xs text-muted">{r.desc}</p>
                   </div>
                 </motion.div>
               ))}
